@@ -1,14 +1,14 @@
 from hausa_translator import hausa_dict
 from yoruba_translator import Yoruba_Dictionary
 from swahili import swahili_dict
-# from igbo import igbo_translator
+from igbo_dictionary import igbo_words
 # from tiv import tiv_translator
 
 print("Welcome to the African Language Translator")
 print("Choose a language:")
 print("1. Hausa")
 print("2. Yoruba")
-print("3. Igbo")
+print("3. igbo")
 print("4. Swahili")
 print("5. Tiv")
 
@@ -19,8 +19,8 @@ if choice == "1":
     print(hausa_dict(word))
 elif choice == "2":
     print(Yoruba_Dictionary(word))
-# elif choice == "3":
-#     print(translate_to_igbo(word))
+elif choice == "3":
+    print(igbo_words(word))
 elif choice == "4":
     print(swahili_dict(word))
 # elif choice == "5":
