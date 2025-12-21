@@ -1,4 +1,3 @@
-
 swahili_dict = {
     "hello": "jambo",
     "thank you": "asante",
@@ -22,11 +21,10 @@ swahili_dict = {
     "two": "mbili"
 }
 
+if __name__ == "__main__":
+    word = input("Enter an English word for Swahili translation: ").strip().lower()
 
-word = input("Enter an English word for Swahili translation: ").strip().lower()
-
-
-if word in swahili_dict:
-    print(f"✅ The Swahili translation is: {swahili_dict[word]}")
-else:
-    print(f"❌ Error: The word '{word}' is not in the Swahili dictionary.")
+    if word in swahili_dict:
+        print(f"✅ The Swahili translation is: {swahili_dict[word]}")
+    else:
+        print(f"❌ Error: The word '{word}' is not in the Swahili dictionary.")

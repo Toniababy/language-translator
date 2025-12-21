@@ -19,8 +19,9 @@ igbo_words = {
     "Fish":"Azu",
     "Rice":"Osikapa"
 }
-word = input("enter an igbo word: ")
-if word in igbo_words:
-    print(word, "means:", igbo_words[word])
-else:
-    print("word not found.")
+if __name__ == "__main__":
+    word = input("enter an igbo word: ")
+    if word in igbo_words:
+        print(word, "means:", igbo_words[word])
+    else:
+        print("word not found.")
