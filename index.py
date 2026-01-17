@@ -1,49 +1,59 @@
+import streamlit as st
+
 from hausa_translator import hausa_dict
 from yoruba_translator import Yoruba_Dictionary
-from swahili import swahili_dict
 from igbo_dictionary import igbo_words
+from swahili import swahili_dict
 from tiv import tiv_translator
 
-print("Welcome to the African Language Translator")
-print("1. Hausa | 2. Yoruba | 3. Igbo | 4. Swahili | 5. Tiv")
 
-choice = input("Enter number (1-5): ")
-word = input("Enter an English word: ").lower().strip()
+st.title("English To Foreign Language Dictionary")
+st.write(
+    "Choose a language and enter an English word to get a translation "
+    "in Yoruba, Igbo, Hausa, Tiv, or Swahili"
+)
 
-# 1. HAUSA
-if choice == "1":
-    if word in hausa_dict:
-        print(f"Hausa: {hausa_dict[word]}")
-    else:
-        print(f"Error: {word} not found in Hausa.")
+# Language Selector
+language = st.selectbox(
+    "Choose a language",
+    ("Hausa", "Yoruba", "Igbo", "Swahili", "Tiv")
+)
 
-# 2. YORUBA
-elif choice == "2":
-    if word in Yoruba_Dictionary:
-        print(f"Yoruba: {Yoruba_Dictionary[word]}")
-    else:
-        print(f"Error: {word} not found in Yoruba.")
+# Word input
+word = st.text_input("Enter an English word").lower().strip()
 
-# 3. IGBO
-elif choice == "3":
-    if word in igbo_words:
-        print(f"Igbo: {igbo_words[word]}")
-    else:
-        print(f"Error: {word} not found in Igbo.")
+# Button
+if st.button("Translate"):
 
-# 4. SWAHILI
-elif choice == "4":
-    if word in swahili_dict:
-        print(f"Swahili: {swahili_dict[word]}")
-    else:
-        print(f"Error: {word} not found in Swahili.")
+    if word == "":
+        st.warning("Please enter a word.")
 
-# 5. TIV
-elif choice == "5":
-    if word in tiv_translator:
-        print(f"Tiv: {tiv_translator[word]}")
-    else:
-        print(f"Error: {word} not found in Tiv.")
+    elif language == "Hausa":
+        if word in hausa_dict:
+            st.success(f"Hausa: {hausa_dict[word]}")
+        else:
+            st.error(f"'{word}' not found in Hausa dictionary.")
 
-else:
-    print("Invalid language choice.")
+    elif language == "Yoruba":
+        if word in Yoruba_Dictionary:
+            st.success(f"Yoruba: {Yoruba_Dictionary[word]}")
+        else:
+            st.error(f"'{word}' not found in Yoruba dictionary.")
+
+    elif language == "Igbo":
+        if word in igbo_words:
+            st.success(f"Igbo: {igbo_words[word]}")
+        else:
+            st.error(f"'{word}' not found in Igbo dictionary.")
+
+    elif language == "Swahili":
+        if word in swahili_dict:
+            st.success(f"Swahili: {swahili_dict[word]}")
+        else:
+            st.error(f"'{word}' not found in Swahili dictionary.")
+
+    elif language == "Tiv":
+        if word in tiv_translator:
+            st.success(f"Tiv: {tiv_translator[word]}")
+        else:
+            st.error(f"'{word}' not found in Tiv dictionary.")
