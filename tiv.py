@@ -25,6 +25,6 @@ if __name__ == "__main__":
     word = input("Enter an English word for Tiv translation: ").strip().lower()
 
     if word in tiv_translator:
-        print(f"✅ The Tiv translation is: {tiv_translator[word]}")
+        print(f" The Tiv translation is: {tiv_translator[word]}")
     else:
-        print(f"❌ Error: The word '{word}' is not in the Tiv dictionary.")
+        print(f" Error: The word '{word}' is not in the Tiv dictionary.")
