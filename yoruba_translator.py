@@ -1,6 +1,5 @@
 
 Yoruba_Dictionary = {
-
     "good morning": "e kaaro",
     "good afternoon": "e kaasan",
     "good evening": "e kaale",
