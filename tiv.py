@@ -20,6 +20,7 @@ tiv_translator = {
     "road": "gbenda",
     "one": "môm",
     "two": "uhaar"
+
 }
 if __name__ == "__main__":
     word = input("Enter an English word for Tiv translation: ").strip().lower()
